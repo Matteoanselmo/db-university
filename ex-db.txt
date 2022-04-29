@@ -4,7 +4,7 @@ EX - Query Con SELECT
     SELECT * FROM `students` WHERE YEAR(`date_of_birth`) = 1990;
 
 2. Selezionare tutti i corsi che valgono più di 10 crediti (479):
-    SELECT * FROM `courses` WHERE `cfu` >= 10;
+    SELECT * FROM `courses` WHERE `cfu` > 10;
 
 3. Selezionare tutti gli studenti che hanno più di 30 anni:
     SELECT * FROM `students` WHERE YEAR(`date_of_birth`) <= 1992;
@@ -30,7 +30,7 @@ laurea (286):
 EX - Query Con GROUP BY 
 
 1. Contare quanti iscritti ci sono stati ogni anno:
-    SELECT COUNT(`id`), YEAR(`enrolment_date`) as date FROM `students` GROUP BY date;
+    SELECT COUNT(`id`) AS `anno_iscrizione`, YEAR(`enrolment_date`) AS `date` FROM `students` GROUP BY date;
 
 2. Contare gli insegnanti che hanno l'ufficio nello stesso edificio:
     SELECT COUNT(`id`), `office_address` as office FROM `teachers` GROUP BY office;
